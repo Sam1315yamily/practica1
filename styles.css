@@ -144,11 +144,3 @@ header p {
         opacity: 1;
     }
 }
-
-/* Footer */
-footer {
-    padding: 20px;
-    background-color: #ff69b4;
-    color: white;
-    font-size: 1rem;
-}
