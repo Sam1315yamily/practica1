@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi Amor ❤️</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Animación personalizada para el overlay */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fadeIn {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+
+        /* Animación para la barra de búsqueda */
+        @keyframes slideIn {
+            from { width: 0; opacity: 0; }
+            to { width: 200px; opacity: 1; }
+        }
+        .animate-slideIn {
+            animation: slideIn 0.3s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-pink-50 text-purple-900 font-sans">
+    <!-- Barra de navegación -->
+    <nav class="bg-pink-500 text-white shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="text-2xl font-bold">Para mi Novio 💖</a>
+
+            <!-- Menú -->
+            <ul class="hidden md:flex space-x-6">
+                <li><a href="#" class="hover:text-pink-200 transition-colors">Inicio</a></li>
+                <li><a href="#" class="hover:text-pink-200 transition-colors">Galería</a></li>
+                <li><a href="#" class="hover:text-pink-200 transition-colors">Mensajes</a></li>
+                <li><a href="#" class="hover:text-pink-200 transition-colors">Contacto</a></li>
+            </ul>
+
+            <!-- Barra de búsqueda -->
+            <div class="flex items-center">
+                <button id="search-btn" class="text-white hover:text-pink-200 transition-colors">
+                    <i class="fas fa-search"></i>
+                </button>
+                <input id="search-bar" type="text" placeholder="Buscar..." 
+                    class="hidden ml-2 px-3 py-1 rounded-full bg-pink-400 text-white placeholder-white focus:outline-none animate-slideIn">
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="bg-white-500 text-#000000 py-10 text-center">
+        <h1 class="text-4xl font-bold">Para mi Novio 💖</h1>
+        <p class="mt-2 text-lg">Un espacio lleno de amor y detalles para ti.</p>
+    </header>
+
+    <!-- Tarjetas -->
+    <section class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Tarjeta 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <div class="text-pink-500 text-3xl mb-4">
+                    <i class="fas fa-heart"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Te Amo</h2>
+                <p class="text-gray-600">Eres mi razón de ser y mi mayor inspiración. Te amo más cada día.</p>
+            </div>
+
+            <!-- Tarjeta 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <div class="text-pink-500 text-3xl mb-4">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Eres Especial</h2>
+                <p class="text-gray-600">Nadie en el mundo es como tú. Eres único y te adoro por eso.</p>
+            </div>
+
+            <!-- Tarjeta 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow">
+                <div class="text-pink-500 text-3xl mb-4">
+                    <i class="fas fa-smile"></i>
+                </div>
+                <h2 class="text-xl font-bold mb-2">Mi Felicidad</h2>
+                <p class="text-gray-600">Contigo cada día es una aventura llena de risas y amor.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galería -->
+    <section class="bg-pink-100 py-8">
+        <h2 class="text-3xl font-bold text-center mb-6">Nuestros Momentos</h2>
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                <!-- Imagen 1 -->
+                <div class="gallery-item relative overflow-hidden rounded-lg cursor-pointer transform hover:scale-105 transition-transform"
+                     style="background-image: url('https://upload.wikimedia.org/wikipedia/commons/7/74/Parque_de_los_Novios_-_Santa_Marta_%284167798510%29.jpg'); background-size: cover; background-position: center; height: 200px;">
+                </div>
+
+                <!-- Imagen 2 -->
+                <div class="gallery-item relative overflow-hidden rounded-lg cursor-pointer transform hover:scale-105 transition-transform"
+                     style="background-image: url('https://via.placeholder.com/300'); background-size: cover; background-position: center; height: 200px;">
+                </div>
+
+                <!-- Imagen 3 -->
+                <div class="gallery-item relative overflow-hidden rounded-lg cursor-pointer transform hover:scale-105 transition-transform"
+                     style="background-image: url('https://via.placeholder.com/300'); background-size: cover; background-position: center; height: 200px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Overlay para la imagen en pantalla completa -->
+    <div id="overlay" class="fixed inset-0 bg-black bg-opacity-90 hidden justify-center items-center p-4 z-50">
+        <span id="close-btn" class="absolute top-4 right-6 text-white text-4xl cursor-pointer hover:text-pink-500 transition-colors">&times;</span>
+        <img id="full-image" class="max-w-full max-h-full rounded-lg animate-fadeIn" src="" alt="Imagen en pantalla completa">
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-pink-500 text-white text-center py-4">
+        <p>Hecho con 💖 por tu novia.</p>
+    </footer>
+
+    <!-- Script para la barra de búsqueda -->
+    <script>
+        // Mostrar/ocultar barra de búsqueda
+        const searchBtn = document.getElementById('search-btn');
+        const searchBar = document.getElementById('search-bar');
+
+        searchBtn.addEventListener('click', () => {
+            searchBar.classList.toggle('hidden');
+            searchBar.classList.toggle('animate-slideIn');
+            searchBar.focus();
+        });
+
+        // Cerrar la barra de búsqueda al hacer clic fuera
+        document.addEventListener('click', (e) => {
+            if (!searchBar.contains(e.target) && !searchBtn.contains(e.target)) {
+                searchBar.classList.add('hidden');
+            }
+        });
+    </script>
+
+    <!-- Script para la galería -->
+    <script>
+        // Seleccionar elementos
+        const galleryItems = document.querySelectorAll('.gallery-item');
+        const overlay = document.getElementById('overlay');
+        const fullImage = document.getElementById('full-image');
+        const closeBtn = document.getElementById('close-btn');
+
+        // Abrir la imagen en pantalla completa
+        galleryItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const imageUrl = item.style.backgroundImage
+                    .replace('url("', '')
+                    .replace('")', '');
+                fullImage.src = imageUrl;
+                overlay.classList.remove('hidden');
+            });
+        });
+
+        // Cerrar la imagen en pantalla completa
+        closeBtn.addEventListener('click', () => {
+            overlay.classList.add('hidden');
+        });
+
+        // Cerrar al hacer clic fuera de la imagen
+        overlay.addEventListener('click', (e) => {
+            if (e.target === overlay) {
+                overlay.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
